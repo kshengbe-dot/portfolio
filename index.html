@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shengbe Koker | Data Science Portfolio</title>
+  <meta name="description" content="Data Science student portfolio: SQL/MySQL, Excel, Tableau, Power BI, JSON, UX/UI." />
+  <style>
+    :root{
+      --bg:#0b1020; --card:#101a33; --text:#e8ecff; --muted:#b9c2ff;
+      --accent:#3b82f6; --line:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(59,130,246,.25), transparent 55%),
+                  radial-gradient(900px 500px at 110% 20%, rgba(99,102,241,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--text); text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 60px}
+    .nav{
+      display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      padding:14px 16px; border:1px solid var(--line); background:rgba(16,26,51,.65);
+      backdrop-filter: blur(10px); border-radius:16px; position:sticky; top:14px; z-index:5;
+    }
+    .nav .brand{font-weight:700; letter-spacing:.2px}
+    .nav .links{display:flex; gap:12px; flex-wrap:wrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px;
+      border:1px solid var(--line); background:rgba(16,26,51,.65);
+    }
+    header{padding:34px 6px 10px}
+    h1{margin:10px 0 8px; font-size:44px; line-height:1.05}
+    .sub{color:var(--muted); font-size:16px; max-width:72ch}
+    .grid{display:grid; gap:14px}
+    @media(min-width:900px){ .grid.cols2{grid-template-columns:1fr 1fr} }
+    section{margin-top:18px}
+    .card{
+      border:1px solid var(--line); background:rgba(16,26,51,.7); border-radius:18px;
+      padding:18px; box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    }
+    .h{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+    h2{margin:0 0 10px; font-size:18px; letter-spacing:.2px}
+    h3{margin:0 0 8px; font-size:16px}
+    .muted{color:var(--muted)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size:12px; padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted);
+    }
+    ul{margin:10px 0 0 18px; color:var(--muted)}
+    li{margin:6px 0}
+    .btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(16,26,51,.75);
+    }
+    .btn.primary{background: rgba(59,130,246,.2); border-color: rgba(59,130,246,.5)}
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="nav">
+      <div class="brand">Shengbe Koker</div>
+      <div class="links">
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <header>
+      <div class="pill" style="width:fit-content;">
+        Data Science Student • SQL/MySQL • Tableau • Power BI • Excel • JSON • UX/UI
+      </div>
+      <h1>Data Science Portfolio</h1>
+      <p class="sub">
+        I’m a Data Science student focused on <b>clean, accurate data</b> and <b>clear reporting</b>.
+        I build dashboards (Tableau/Power BI), query databases (SQL/MySQL), and turn messy data
+        (like JSON) into structured insights. I also bring leadership experience mentoring
+        40+ students across two consecutive semesters.
+      </p>
+
+      <div class="btns">
+        <!-- Replace these links with your real URLs -->
+        <a class="btn primary" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:kshengbe@gmail.com">Email Me</a>
+      </div>
+    </header>
+
+    <section id="projects">
+      <div class="grid cols2">
+        <div class="card">
+          <h2>Big Data Dashboards</h2>
+          <p class="muted">SQL/MySQL • Tableau • Power BI</p>
+          <ul>
+            <li>Built structured datasets using SQL/MySQL</li>
+            <li>Cleaned and validated data for reporting accuracy</li>
+            <li>Created dashboards to visualize trends and KPIs</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Tableau</span>
+            <span class="tag">Power BI</span><span class="tag">Excel</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Flight Data (JSON) Analysis</h2>
+          <p class="muted">JSON • SQL • Reporting</p>
+          <ul>
+            <li>Processed raw JSON flight datasets</li>
+            <li>Imported data into SQL tables and queried records</li>
+            <li>Produced visual summaries and reports</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">JSON</span><span class="tag">SQL</span><span class="tag">Data Cleaning</span><span class="tag">Reporting</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Needy Children Support Platform</h2>
+          <p class="muted">UX/UI • Data Organization • Platform Design</p>
+          <ul>
+            <li>Designed a data-driven platform concept to support children in need</li>
+            <li>Organized user records and project datasets</li>
+            <li>Applied UX/UI principles for usability and accessibility</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">UX/UI</span><span class="tag">HTML</span><span class="tag">Data Modeling</span><span class="tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Leadership & Accuracy</h2>
+          <p class="muted">Quality Control • Records • Mentoring</p>
+          <ul>
+            <li>Lens Technician: verified detailed prescription data and maintained records</li>
+            <li>New Student Mentor (2 semesters): led 40+ students per semester</li>
+            <li>Strengths: accuracy, documentation, reliability</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Attention to Detail</span><span class="tag">Documentation</span><span class="tag">Leadership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="grid cols2">
+          <div>
+            <h3>Data & Analytics</h3>
+            <p class="muted">SQL • MySQL • Excel • Tableau • Power BI • JSON</p>
+          </div>
+          <div>
+            <h3>Programming & Design</h3>
+            <p class="muted">HTML • C++ • UX/UI Principles</p>
+          </div>
+          <div>
+            <h3>Core Strengths</h3>
+            <p class="muted">Data Cleaning • Validation • Reporting • Dashboards • Documentation</p>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <p class="muted">Microsoft Office • Google Workspace</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="card">
+        <h2>Experience</h2>
+        <p class="muted"><b>Lens Technician — EssilorLuxottica</b> (Idaho Falls)</p>
+        <ul>
+          <li>Verified prescription data, tracked workflow, and resolved discrepancies</li>
+          <li>Maintained accurate digital records and quality standards</li>
+        </ul>
+
+        <p class="muted" style="margin-top:14px;"><b>New Student Mentor — BYU–Idaho</b> (Two consecutive semesters)</p>
+        <ul>
+          <li>Mentored 40+ students per semester; organized records and coordinated with staff</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted">Rexburg, ID • (208) 602-0313 • <a href="mailto:kshengbe@gmail.com">kshengbe@gmail.com</a></p>
+        <p class="muted">Update the GitHub/LinkedIn links at the top when you’re ready.</p>
+      </div>
+    </section>
+
+    <footer>
+      Built by Shengbe Koker • <span class="muted">Last updated:</span> <code>2026-02-05</code>
+    </footer>
+
+  </div>
+</body>
+</html>
