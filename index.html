@@ -6,21 +6,24 @@
   <title>Shengbe Koker | Data Science Portfolio</title>
   <meta
     name="description"
-    content="Shengbe Koker - Data Science student portfolio featuring analytics, dashboards, web projects, and interactive project showcases."
+    content="Shengbe Koker - Data Science portfolio featuring analytics, dashboards, flight data analysis, and interactive web projects."
   />
+
   <style>
     :root{
-      --bg:#0b1020;
-      --bg-soft:#121933;
-      --card:#11182d;
-      --card-2:#18213f;
+      --bg:#08101f;
+      --bg2:#0d1630;
+      --card:rgba(17,24,45,.72);
+      --card-strong:rgba(24,33,63,.88);
       --text:#eef2ff;
-      --muted:#a6b1d1;
+      --muted:#a8b4d8;
       --accent:#7c5cff;
-      --accent-2:#1dd3b0;
+      --accent2:#19d3ae;
       --stroke:rgba(255,255,255,.10);
+      --stroke-strong:rgba(255,255,255,.16);
       --shadow:0 20px 60px rgba(0,0,0,.35);
-      --radius:22px;
+      --shadow-lg:0 28px 90px rgba(0,0,0,.45);
+      --radius:24px;
       --max:1180px;
     }
 
@@ -28,16 +31,17 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124,92,255,.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(29,211,176,.12), transparent 28%),
-        linear-gradient(180deg, #09101f 0%, #0b1020 100%);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(25,211,174,.10), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       line-height:1.6;
+      overflow-x:hidden;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
 
     .container{
@@ -48,9 +52,9 @@
     .nav{
       position:sticky;
       top:0;
-      z-index:20;
-      backdrop-filter: blur(14px);
-      background:rgba(8,12,24,.72);
+      z-index:100;
+      backdrop-filter:blur(16px);
+      background:rgba(7,11,24,.72);
       border-bottom:1px solid var(--stroke);
     }
 
@@ -62,10 +66,25 @@
       padding:16px 0;
     }
 
+    .brand-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-avatar{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(124,92,255,.4);
+      box-shadow:0 8px 24px rgba(124,92,255,.25);
+    }
+
     .brand{
-      font-size:1.05rem;
       font-weight:800;
-      letter-spacing:.3px;
+      letter-spacing:.2px;
+      font-size:1rem;
     }
 
     .nav-links{
@@ -83,74 +102,109 @@
     .nav-links a:hover{color:var(--text)}
 
     .hero{
-      padding:88px 0 54px;
+      padding:76px 0 34px;
+      position:relative;
+    }
+
+    .glow{
+      position:absolute;
+      inset:auto auto 0 0;
+      width:340px;
+      height:340px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(124,92,255,.16), transparent 70%);
+      filter:blur(8px);
+      pointer-events:none;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:26px;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
       align-items:stretch;
     }
 
     .hero-card,
     .side-card,
     .project-card,
-    .info-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    .panel,
+    .about-card,
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
     }
 
     .hero-card{
       padding:34px;
       position:relative;
       overflow:hidden;
+      box-shadow:var(--shadow-lg);
     }
 
-    .hero-card::before{
+    .hero-card::after{
       content:"";
       position:absolute;
-      inset:auto -80px -80px auto;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle, rgba(124,92,255,.32), transparent 65%);
+      right:-80px;
+      bottom:-80px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(124,92,255,.24), transparent 65%);
       pointer-events:none;
     }
 
+    .hero-top{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .profile-photo{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(124,92,255,.45);
+      box-shadow:0 14px 40px rgba(124,92,255,.22);
+      transition:transform .25s ease;
+    }
+
+    .profile-photo:hover{transform:scale(1.04)}
+
     .eyebrow{
       display:inline-flex;
-      align-items:center;
-      gap:10px;
       padding:8px 12px;
-      border:1px solid rgba(124,92,255,.28);
       border-radius:999px;
-      color:#d9d0ff;
-      background:rgba(124,92,255,.12);
-      font-size:.86rem;
-      font-weight:700;
-      margin-bottom:16px;
+      background:rgba(124,92,255,.14);
+      border:1px solid rgba(124,92,255,.28);
+      color:#ddd3ff;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      margin-bottom:10px;
     }
 
     h1{
-      margin:0 0 14px;
-      font-size:clamp(2.2rem, 6vw, 4.4rem);
+      margin:0;
+      font-size:clamp(2.2rem, 6vw, 4.2rem);
       line-height:1.02;
-      letter-spacing:-.04em;
+      letter-spacing:-.05em;
     }
 
-    .hero p{
-      margin:0;
+    .hero-sub{
+      margin:16px 0 0;
       color:var(--muted);
-      font-size:1.03rem;
+      font-size:1.04rem;
       max-width:760px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
       margin-top:24px;
     }
 
@@ -162,30 +216,29 @@
       min-height:48px;
       padding:0 18px;
       border-radius:14px;
-      font-weight:700;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      font-weight:800;
       border:1px solid transparent;
+      transition:transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
       cursor:pointer;
     }
 
-    .btn:hover{
-      transform:translateY(-2px);
-    }
+    .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--accent), #5b8cff);
-      color:white;
-      box-shadow:0 14px 34px rgba(124,92,255,.28);
+      background:linear-gradient(135deg, var(--accent), #4c7df7);
+      color:#fff;
+      box-shadow:0 14px 34px rgba(124,92,255,.25);
     }
 
     .btn-secondary{
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.05);
       border-color:var(--stroke);
       color:var(--text);
     }
 
     .btn-secondary:hover{
-      background:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.09);
+      border-color:var(--stroke-strong);
     }
 
     .hero-tags{
@@ -196,13 +249,54 @@
     }
 
     .tag{
-      padding:9px 12px;
+      padding:8px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,.05);
       border:1px solid var(--stroke);
-      color:#d6defa;
-      font-size:.88rem;
+      background:rgba(255,255,255,.05);
+      color:#dde5ff;
+      font-size:.86rem;
+      font-weight:700;
+    }
+
+    .metrics-strip{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin:22px 0 8px;
+    }
+
+    .metric-box{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      text-align:center;
+    }
+
+    .metric-box strong{
+      display:block;
+      font-size:1.35rem;
+      margin-bottom:4px;
+    }
+
+    .metric-box span{
+      color:var(--muted);
+      font-size:.9rem;
       font-weight:600;
+    }
+
+    .signature-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-top:22px;
+      flex-wrap:wrap;
+    }
+
+    .signature{
+      width:150px;
+      opacity:.92;
+      filter:drop-shadow(0 8px 20px rgba(0,0,0,.2));
     }
 
     .side-stack{
@@ -220,35 +314,89 @@
       font-size:1.1rem;
     }
 
-    .stat{
+    .muted{color:var(--muted)}
+
+    .stat-row{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:12px 0;
+      padding:13px 0;
       border-bottom:1px solid rgba(255,255,255,.07);
     }
 
-    .stat:last-child{border-bottom:none}
-    .stat strong{font-size:1.15rem}
-    .muted{color:var(--muted)}
-
-    section{
-      padding:26px 0 10px;
+    .stat-row:last-child{border-bottom:none}
+    .stat-num{
+      font-size:1.18rem;
+      font-weight:800;
     }
+
+    .mini-note{
+      margin-top:12px;
+      font-size:.93rem;
+      color:#d7e0ff;
+    }
+
+    section{padding:22px 0 10px}
 
     .section-head{
       display:flex;
       align-items:end;
       justify-content:space-between;
-      gap:16px;
+      gap:18px;
       margin-bottom:18px;
+      flex-wrap:wrap;
     }
 
     .section-head p{
       margin:0;
       color:var(--muted);
-      max-width:720px;
+      max-width:760px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:10px;
+    }
+
+    .about-card{
+      padding:24px;
+    }
+
+    .about-card h3{
+      margin:0 0 12px;
+      font-size:1.15rem;
+    }
+
+    .about-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .filter-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .filter-btn{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:rgba(124,92,255,.18);
+      border-color:rgba(124,92,255,.35);
     }
 
     .projects-grid{
@@ -262,22 +410,87 @@
       display:flex;
       flex-direction:column;
       min-height:100%;
-      position:relative;
+      transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(124,92,255,.26);
+      box-shadow:0 20px 46px rgba(0,0,0,.28);
     }
 
     .project-kicker{
       display:inline-block;
-      font-size:.8rem;
-      font-weight:800;
+      font-size:.78rem;
       text-transform:uppercase;
       letter-spacing:.08em;
-      color:#bdb1ff;
+      font-weight:800;
+      color:#c5b8ff;
       margin-bottom:10px;
+    }
+
+    .project-thumb{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      margin-bottom:16px;
+      border:1px solid var(--stroke);
+      background:#0d1328;
+    }
+
+    .project-thumb img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+      transition:transform .35s ease, opacity .35s ease;
+    }
+
+    .project-thumb::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.45));
+      pointer-events:none;
+    }
+
+    .project-overlay{
+      position:absolute;
+      inset:auto 12px 12px 12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      z-index:2;
+    }
+
+    .overlay-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:0 12px;
+      border-radius:10px;
+      font-size:.85rem;
+      font-weight:800;
+      background:rgba(8,12,24,.78);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(8px);
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .overlay-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(124,92,255,.82);
+    }
+
+    .project-card:hover .project-thumb img{
+      transform:scale(1.06);
     }
 
     .project-card h3{
       margin:0 0 10px;
-      font-size:1.25rem;
+      font-size:1.22rem;
     }
 
     .project-card p{
@@ -290,17 +503,17 @@
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .chip{
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--stroke);
-      color:#dfe6ff;
       padding:7px 10px;
       border-radius:999px;
-      font-size:.82rem;
-      font-weight:600;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--stroke);
+      font-size:.8rem;
+      font-weight:700;
+      color:#dfe6ff;
     }
 
     .card-actions{
@@ -317,10 +530,12 @@
       padding:10px 14px;
       border-radius:12px;
       font-size:.92rem;
-      font-weight:700;
+      font-weight:800;
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.05);
       transition:.18s ease;
+      cursor:pointer;
+      color:var(--text);
     }
 
     .mini-btn:hover{
@@ -329,52 +544,43 @@
     }
 
     .mini-btn.primary{
-      background:rgba(124,92,255,.16);
+      background:rgba(124,92,255,.18);
       border-color:rgba(124,92,255,.35);
-      color:#ece8ff;
-    }
-
-    .mini-btn.primary:hover{
-      background:rgba(124,92,255,.26);
     }
 
     .two-col{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:20px;
-      margin-top:10px;
+      margin-top:8px;
     }
 
-    .info-card{
+    .panel{
       padding:24px;
     }
 
-    .info-card h3{
+    .panel h3{
       margin:0 0 14px;
-      font-size:1.15rem;
-    }
-
-    .skill-list,
-    .timeline{
-      display:grid;
-      gap:12px;
+      font-size:1.16rem;
     }
 
     .skill-row{
       display:flex;
+      gap:14px;
       flex-wrap:wrap;
-      gap:10px;
-      align-items:flex-start;
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,.07);
     }
 
+    .skill-row:last-child{border-bottom:none}
     .skill-label{
       min-width:170px;
-      color:#dfe5ff;
-      font-weight:700;
+      font-weight:800;
+      color:#e4eaff;
     }
 
     .timeline-item{
-      padding:14px 0;
+      padding:13px 0;
       border-bottom:1px solid rgba(255,255,255,.07);
     }
 
@@ -388,40 +594,153 @@
       color:var(--muted);
     }
 
-    .contact-box{
+    .contact-card{
       margin:24px 0 70px;
       padding:28px;
-      border-radius:var(--radius);
-      border:1px solid var(--stroke);
       background:
-        linear-gradient(135deg, rgba(124,92,255,.18), rgba(29,211,176,.08)),
+        linear-gradient(135deg, rgba(124,92,255,.16), rgba(25,211,174,.06)),
         rgba(255,255,255,.03);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-lg);
     }
 
-    .contact-box h2{
+    .contact-card h2{
       margin:0 0 10px;
       font-size:clamp(1.6rem, 3vw, 2.2rem);
     }
 
-    .contact-box p{
+    .contact-card p{
       margin:0 0 18px;
-      color:#dde5ff;
       max-width:760px;
+      color:#dde5ff;
+    }
+
+    .social-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .social-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .social-pill:hover{
+      background:rgba(255,255,255,.10);
+      transform:translateY(-2px);
     }
 
     footer{
       padding:0 0 34px;
-      color:var(--muted);
       text-align:center;
-      font-size:.95rem;
+      color:var(--muted);
     }
 
-    @media (max-width: 980px){
+    .footer-signature{
+      width:140px;
+      margin:0 auto 10px;
+      opacity:.88;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(3,6,14,.72);
+      backdrop-filter:blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:999;
+      opacity:0;
+      pointer-events:none;
+      transition:.25s ease;
+    }
+
+    .modal.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .modal-panel{
+      width:min(100%, 760px);
+      background:linear-gradient(180deg, rgba(18,26,47,.96), rgba(11,18,35,.98));
+      border:1px solid var(--stroke);
+      border-radius:24px;
+      box-shadow:var(--shadow-lg);
+      padding:26px;
+      position:relative;
+    }
+
+    .modal-close{
+      position:absolute;
+      top:14px;
+      right:14px;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-size:1.1rem;
+      cursor:pointer;
+    }
+
+    .modal h3{
+      margin:0 0 12px;
+      font-size:1.45rem;
+    }
+
+    .modal p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .modal-list{
+      margin:0;
+      padding-left:18px;
+      color:#e5ecff;
+    }
+
+    .modal-list li{
+      margin:8px 0;
+    }
+
+    @media (max-width:980px){
       .hero-grid,
       .projects-grid,
-      .two-col{
+      .two-col,
+      .about-grid{
         grid-template-columns:1fr;
+      }
+
+      .metrics-strip{
+        grid-template-columns:1fr 1fr;
       }
 
       .nav-inner{
@@ -430,14 +749,17 @@
       }
     }
 
-    @media (max-width: 640px){
-      .hero{padding-top:56px}
-      .hero-card,
-      .side-card,
-      .project-card,
-      .info-card,
-      .contact-box{
+    @media (max-width:640px){
+      .hero{padding-top:54px}
+      .hero-card,.side-card,.project-card,.panel,.about-card,.contact-card,.modal-panel{
         padding:20px;
+      }
+      .hero-top{
+        align-items:flex-start;
+      }
+      .profile-photo{
+        width:74px;
+        height:74px;
       }
       .hero-actions,
       .card-actions{
@@ -447,14 +769,26 @@
       .mini-btn{
         width:100%;
       }
+      .signature-wrap{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .metrics-strip{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">Shengbe Koker</div>
+      <div class="brand-wrap">
+        <img src="assets/profile.jpg" alt="Shengbe Koker" class="brand-avatar" />
+        <div class="brand">Shengbe Koker</div>
+      </div>
+
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#featured">Featured Work</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
@@ -464,14 +798,21 @@
   </nav>
 
   <header class="hero">
+    <div class="glow"></div>
     <div class="container hero-grid">
-      <div class="hero-card">
-        <div class="eyebrow">Data Science • Analytics • Technical Portfolio</div>
-        <h1>Building data projects, dashboards, and digital experiences that show real work.</h1>
-        <p>
-          I’m Shengbe Koker, a Data Science student focused on analytics, reporting, dashboards,
-          SQL, Python, and building practical technical projects. I combine data thinking with
-          product execution, from flight analysis work to full interactive web platforms.
+      <div class="hero-card reveal">
+        <div class="hero-top">
+          <img src="assets/profile.jpg" alt="Shengbe Koker" class="profile-photo" />
+          <div>
+            <div class="eyebrow">Data Science • Analytics • Portfolio</div>
+            <h1>Shengbe Koker</h1>
+          </div>
+        </div>
+
+        <p class="hero-sub">
+          I build analytics projects, dashboards, and digital experiences that combine data thinking
+          with product execution. My work spans Python, SQL, Tableau, Power BI, Firebase, and
+          interactive web systems.
         </p>
 
         <div class="hero-actions">
@@ -479,10 +820,10 @@
             View GitHub Profile
           </a>
           <a class="btn btn-secondary" href="#featured">
-            Explore Featured Work
+            Explore My Work
           </a>
-          <a class="btn btn-secondary" href="mailto:kshengbe@gmail.com">
-            Contact Me
+          <a class="btn btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+            Download Resume
           </a>
         </div>
 
@@ -494,32 +835,64 @@
           <span class="tag">Excel</span>
           <span class="tag">HTML / CSS / JS</span>
           <span class="tag">Firebase</span>
-          <span class="tag">Data Visualization</span>
+          <span class="tag">Data Storytelling</span>
+        </div>
+
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <strong>3+</strong>
+            <span>Featured Projects</span>
+          </div>
+          <div class="metric-box">
+            <strong>SQL</strong>
+            <span>Data Querying</span>
+          </div>
+          <div class="metric-box">
+            <strong>Python</strong>
+            <span>Analysis Workflow</span>
+          </div>
+          <div class="metric-box">
+            <strong>Firebase</strong>
+            <span>App Systems</span>
+          </div>
+        </div>
+
+        <div class="signature-wrap">
+          <img src="assets/signature.png" alt="Shengbe Koker signature" class="signature" />
+          <span class="muted">Building work that people can see, use, and trust.</span>
         </div>
       </div>
 
       <div class="side-stack">
-        <div class="side-card">
+        <div class="side-card reveal">
           <h3>Quick Snapshot</h3>
-          <div class="stat">
+
+          <div class="stat-row">
             <span class="muted">Focus</span>
-            <strong>Data + Product</strong>
+            <span class="stat-num">Data + Product</span>
           </div>
-          <div class="stat">
+          <div class="stat-row">
+            <span class="muted">Projects</span>
+            <span class="stat-num">3+ Featured</span>
+          </div>
+          <div class="stat-row">
             <span class="muted">Location</span>
-            <strong>Rexburg, Idaho</strong>
+            <span class="stat-num">Rexburg, Idaho</span>
           </div>
-          <div class="stat">
+          <div class="stat-row">
             <span class="muted">Email</span>
-            <strong>kshengbe@gmail.com</strong>
+            <span class="stat-num">kshengbe@gmail.com</span>
           </div>
         </div>
 
-        <div class="side-card">
-          <h3>What this portfolio highlights</h3>
+        <div class="side-card reveal">
+          <h3>What stands out here</h3>
           <p class="muted">
-            Analytics projects, dashboard thinking, web-based systems, and interactive project links
-            so recruiters can go straight to the work.
+            Real project links, practical analytics work, technical systems building, and a cleaner
+            presentation that lets recruiters quickly go from summary to proof.
+          </p>
+          <p class="mini-note">
+            Use the project buttons below to explore featured repos and quick project summaries.
           </p>
         </div>
       </div>
@@ -527,24 +900,79 @@
   </header>
 
   <main class="container">
-    <section id="featured">
+    <section id="about" class="reveal">
       <div class="section-head">
         <div>
-          <h2 class="section-title">Featured Work</h2>
+          <h2 class="section-title">About Me</h2>
           <p>
-            These are the projects that best represent my technical range and practical problem-solving.
+            I bring together data analysis, technical building, and practical execution. My work reflects
+            both analytical thinking and the ability to turn ideas into usable systems.
           </p>
         </div>
       </div>
 
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>What I do</h3>
+          <p>
+            I work across Python, SQL, Excel, Tableau, Power BI, HTML, CSS, JavaScript, and Firebase to
+            create analytics projects, dashboards, and interactive technical products.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>What makes my work different</h3>
+          <p>
+            I focus on clarity, usability, insight, and structure so people can actually understand the work,
+            interact with it, and trust what it shows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Featured Work</h2>
+          <p>
+            These are the projects that best show my range across analytics, dashboards,
+            technical systems, and product-style execution.
+          </p>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
+        <button class="filter-btn" data-filter="web">Web / Product</button>
+        <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+      </div>
+
       <div class="projects-grid">
-        <article class="project-card">
+        <article class="project-card" data-category="analytics">
           <span class="project-kicker">Highlighted Project</span>
+
+          <div class="project-thumb">
+            <img src="assets/flight-cover.jpg" alt="Flight Data Analysis Project preview" />
+            <div class="project-overlay">
+              <a class="overlay-btn" href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project" target="_blank" rel="noopener noreferrer">Open Repo</a>
+              <button
+                class="overlay-btn"
+                data-title="Flight Data Analysis Project"
+                data-description="This project focuses on flight performance trends, delays, cancellations, and presenting findings through an analytics mindset."
+                data-points='["Analyzed delay and cancellation patterns","Used Python and SQL for structured analysis","Positioned the work for dashboard and reporting use","Built as a portfolio-ready analytics project"]'
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+
           <h3>Flight Data Analysis Project</h3>
           <p>
-            An analytics project focused on identifying delay and cancellation trends using structured
-            data workflows, reporting logic, and visualization tools.
+            A project focused on analyzing airline delays and cancellations using structured workflows,
+            reporting logic, and visualization tools to surface useful trends.
           </p>
+
           <div class="chips">
             <span class="chip">Python</span>
             <span class="chip">SQL</span>
@@ -552,33 +980,36 @@
             <span class="chip">Power BI</span>
             <span class="chip">Reporting</span>
           </div>
+
           <div class="card-actions">
-            <a
-              class="mini-btn primary"
-              href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              class="mini-btn"
-              href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open Repo
-            </a>
+            <a class="mini-btn primary" href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-category="web">
           <span class="project-kicker">Highlighted Project</span>
+
+          <div class="project-thumb">
+            <img src="assets/thisisus-cover.jpg" alt="THIS IS US Series preview" />
+            <div class="project-overlay">
+              <a class="overlay-btn" href="https://github.com/kshengbe-dot/This-Is-Us-Series" target="_blank" rel="noopener noreferrer">Open Repo</a>
+              <button
+                class="overlay-btn"
+                data-title="THIS IS US Series"
+                data-description="An interactive platform that combines storytelling, front-end systems, Firebase integration, and community features."
+                data-points='["Built with HTML, CSS, JavaScript, and Firebase","Includes reader interaction and publishing features","Shows product thinking and technical structure","Represents a substantial real project rather than a demo page"]'
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+
           <h3>THIS IS US Series</h3>
           <p>
-            An interactive reading platform built with modern front-end structure and Firebase-backed
-            features including reader interaction, publishing flow, and community elements.
+            An interactive reading platform with front-end architecture and Firebase-backed features
+            for user interaction, content publishing, community engagement, and admin workflows.
           </p>
+
           <div class="chips">
             <span class="chip">HTML</span>
             <span class="chip">JavaScript</span>
@@ -586,136 +1017,225 @@
             <span class="chip">UI/UX</span>
             <span class="chip">Product Design</span>
           </div>
+
           <div class="card-actions">
-            <a
-              class="mini-btn primary"
-              href="https://github.com/kshengbe-dot/This-Is-Us-Series"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
-            <a
-              class="mini-btn"
-              href="https://github.com/kshengbe-dot/This-Is-Us-Series"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open Repo
-            </a>
+            <a class="mini-btn primary" href="https://github.com/kshengbe-dot/This-Is-Us-Series" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-category="portfolio">
           <span class="project-kicker">Portfolio</span>
+
+          <div class="project-thumb">
+            <img src="assets/portfolio-cover.jpg" alt="Portfolio preview" />
+            <div class="project-overlay">
+              <a class="overlay-btn" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <button
+                class="overlay-btn"
+                data-title="GitHub Portfolio"
+                data-description="A single place where recruiters and collaborators can explore my analytics, technical, and portfolio projects."
+                data-points='["Central hub for technical work","Includes analytics and web-based projects","Gives direct recruiter access to proof of work","Supports stronger personal branding online"]'
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+
           <h3>My GitHub Portfolio</h3>
           <p>
-            A central place to explore my technical work, repositories, and growing project experience
-            across analytics, dashboards, and web development.
+            A central place to explore my technical work across analytics, dashboards,
+            repositories, and practical project building.
           </p>
+
           <div class="chips">
             <span class="chip">GitHub</span>
             <span class="chip">Projects</span>
             <span class="chip">Portfolio</span>
-            <span class="chip">Technical Showcase</span>
+            <span class="chip">Showcase</span>
           </div>
+
           <div class="card-actions">
-            <a
-              class="mini-btn primary"
-              href="https://github.com/kshengbe-dot"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit GitHub
-            </a>
-            <a
-              class="mini-btn"
-              href="https://github.com/kshengbe-dot/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Portfolio Repo
-            </a>
+            <a class="mini-btn primary" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="reveal">
       <div class="two-col">
-        <div class="info-card">
+        <div class="panel">
           <h3>Skills</h3>
-          <div class="skill-list">
-            <div class="skill-row">
-              <div class="skill-label">Data & Analytics</div>
-              <div class="muted">Python, Pandas, NumPy, SQL, MySQL, Excel, Data Cleaning, Reporting, Analysis</div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label">Visualization</div>
-              <div class="muted">Tableau, Power BI, Dashboard Design, Data Storytelling</div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label">Web & Systems</div>
-              <div class="muted">HTML, CSS, JavaScript, Firebase, JSON, UI/UX, Responsive Design</div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label">Professional Strengths</div>
-              <div class="muted">Documentation, Attention to Detail, Communication, Leadership, Problem Solving</div>
-            </div>
+
+          <div class="skill-row">
+            <div class="skill-label">Data & Analytics</div>
+            <div class="muted">Python, Pandas, NumPy, SQL, MySQL, Excel, Data Cleaning, Reporting, Exploratory Analysis</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-label">Visualization</div>
+            <div class="muted">Tableau, Power BI, Dashboard Design, Data Storytelling, Insight Communication</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-label">Web & Systems</div>
+            <div class="muted">HTML, CSS, JavaScript, Firebase, JSON, Responsive Design, Front-End Development</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-label">Professional Strengths</div>
+            <div class="muted">Leadership, Communication, Documentation, Problem Solving, Attention to Detail</div>
           </div>
         </div>
 
-        <div class="info-card" id="experience">
+        <div class="panel" id="experience">
           <h3>Experience</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>Lens Technician</h4>
-              <p>
-                Worked with detailed records, prescription accuracy, and quality-focused workflows requiring
-                consistency and precision.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <h4>New Student Mentor</h4>
-              <p>
-                Supported and guided 40+ students per semester across two consecutive semesters, coordinating
-                communication and helping students navigate challenges.
-              </p>
-            </div>
-            <div class="timeline-item">
-              <h4>Technical Project Builder</h4>
-              <p>
-                Created hands-on portfolio work that combines analytics, reporting, dashboard thinking, and
-                front-end implementation.
-              </p>
-            </div>
+
+          <div class="timeline-item">
+            <h4>Lens Technician</h4>
+            <p>
+              Worked in a quality-focused environment requiring careful handling, attention to detail,
+              accuracy, and consistency in technical workflow.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>New Student Mentor</h4>
+            <p>
+              Supported students with communication, guidance, and successful adaptation to campus life.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Technical Project Builder</h4>
+            <p>
+              Built hands-on projects combining analytics, dashboards, front-end systems,
+              and interactive product thinking.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="contact-box">
+    <section id="contact" class="reveal">
+      <div class="contact-card">
         <h2>Let’s connect</h2>
         <p>
-          I’m actively building my analytics and technical portfolio and I’m interested in opportunities where
-          I can contribute through data analysis, reporting, dashboards, and practical problem-solving.
+          I’m actively growing my portfolio in analytics, dashboards, and technical problem-solving.
+          I’m especially interested in opportunities where I can contribute through data analysis,
+          reporting, visualization, and practical system building.
         </p>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:kshengbe@gmail.com">Email Me</a>
-          <a class="btn btn-secondary" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">
-            GitHub Profile
-          </a>
-          <a class="btn btn-secondary" href="https://github.com/kshengbe-dot/portfolio" target="_blank" rel="noopener noreferrer">
-            Portfolio Repo
-          </a>
+          <a class="btn btn-secondary" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          <a class="btn btn-secondary" href="https://github.com/kshengbe-dot/portfolio" target="_blank" rel="noopener noreferrer">Portfolio Repo</a>
+        </div>
+
+        <div class="social-links">
+          <a class="social-pill" href="mailto:kshengbe@gmail.com">Email</a>
+          <a class="social-pill" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="social-pill" href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project" target="_blank" rel="noopener noreferrer">Flight Project</a>
+          <a class="social-pill" href="https://github.com/kshengbe-dot/This-Is-Us-Series" target="_blank" rel="noopener noreferrer">THIS IS US</a>
         </div>
       </div>
     </section>
 
     <footer>
-      Built by Shengbe Koker
+      <img src="assets/signature.png" alt="Signature" class="footer-signature" />
+      <div>Built by Shengbe Koker</div>
     </footer>
   </main>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">✕</button>
+      <h3 id="modalTitle">Project Title</h3>
+      <p id="modalDescription"></p>
+      <ul class="modal-list" id="modalList"></ul>
+    </div>
+  </div>
+
+  <script>
+    // Reveal animation
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    // Filter projects
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Project details modal
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalList = document.getElementById('modalList');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('[data-title]').forEach(button => {
+      button.addEventListener('click', () => {
+        const title = button.dataset.title || '';
+        const description = button.dataset.description || '';
+        let points = [];
+
+        try {
+          points = JSON.parse(button.dataset.points || '[]');
+        } catch (e) {
+          points = [];
+        }
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalList.innerHTML = points.map(point => `<li>${point}</li>`).join('');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
 </body>
 </html>
