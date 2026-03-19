@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Data Analysis Case Study | Shengbe Koker</title>
+  <meta name="description" content="Flight Data Analysis case study by Shengbe Koker." />
+
+  <style>
+    :root{
+      --bg:#08101f;
+      --bg2:#0d1630;
+      --text:#eef2ff;
+      --muted:#a8b4d8;
+      --accent:#7c5cff;
+      --stroke:rgba(255,255,255,.10);
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --shadow-lg:0 28px 90px rgba(0,0,0,.45);
+      --radius:24px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(25,211,174,.10), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height:1.7;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(16px);
+      background:rgba(7,11,24,.72);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:1rem;
+    }
+
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 16px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .back-link:hover{
+      background:rgba(255,255,255,.10);
+      transform:translateY(-2px);
+    }
+
+    .hero{
+      padding:56px 0 24px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(124,92,255,.14);
+      border:1px solid rgba(124,92,255,.28);
+      color:#ddd3ff;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(2rem, 5vw, 3.4rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:780px;
+    }
+
+    .hero-image{
+      margin:28px 0;
+      border-radius:22px;
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin:0 0 28px;
+    }
+
+    .metric{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+    }
+
+    .metric strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+
+    .metric span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .content{
+      display:grid;
+      gap:18px;
+      padding-bottom:64px;
+    }
+
+    .block{
+      padding:22px;
+      border-radius:22px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      box-shadow:var(--shadow);
+    }
+
+    .block h2{
+      margin:0 0 12px;
+      font-size:1.15rem;
+    }
+
+    .block p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .block ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .block li{
+      margin:8px 0;
+    }
+
+    @media (max-width:800px){
+      .metrics{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:560px){
+      .metrics{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Shengbe Koker</div>
+      <a class="back-link" href="index.html">← Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Analytics Case Study</div>
+      <h1>Flight Data Analysis & Operational Performance Insights</h1>
+      <p class="sub">
+        An end-to-end data project focused on delay behavior, cancellations, route inefficiencies,
+        and translating flight data into operational insight.
+      </p>
+
+      <img src="assets/flight-cover.jpg" alt="Flight case study visual" class="hero-image" />
+
+      <div class="metrics">
+        <div class="metric">
+          <strong>50,000+</strong>
+          <span>Flight records analyzed</span>
+        </div>
+        <div class="metric">
+          <strong>3+</strong>
+          <span>Dashboard views designed</span>
+        </div>
+        <div class="metric">
+          <strong>30–40%</strong>
+          <span>Higher delay frequency in peak periods</span>
+        </div>
+        <div class="metric">
+          <strong>End-to-End</strong>
+          <span>Cleaning to reporting workflow</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="block">
+        <h2>Overview</h2>
+        <p>
+          This project analyzes airline operational data to uncover patterns in flight delays and cancellations.
+          The goal was to simulate a real-world analytics workflow by transforming raw datasets into structured,
+          decision-ready insights through cleaning, querying, visualization, and reporting.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Business Context</h2>
+        <p>
+          Flight disruptions affect operational cost, scheduling efficiency, customer experience, and performance
+          reliability. Understanding where delays concentrate creates a stronger foundation for route optimization
+          and operational planning.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Objective</h2>
+        <ul>
+          <li>Identify meaningful patterns in delays and cancellations.</li>
+          <li>Analyze operational bottlenecks across routes and time segments.</li>
+          <li>Translate raw airline data into dashboard-ready business insight.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Dataset</h2>
+        <ul>
+          <li>Processed 50,000+ flight records across multiple variables.</li>
+          <li>Worked with fields including airline, departure timing, delay duration, and cancellation status.</li>
+          <li>Used structured and semi-structured data formats including JSON-based records.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Data Pipeline & Workflow</h2>
+        <ul>
+          <li>Imported raw flight data and structured it into analysis-ready tables.</li>
+          <li>Handled missing values, duplicate entries, and inconsistent field formatting.</li>
+          <li>Standardized time formats and built derived fields for delay categories and segmented analysis.</li>
+          <li>Prepared datasets for SQL querying, dashboarding, and comparative performance review.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Analysis & Methodology</h2>
+        <ul>
+          <li>Used SQL to filter, aggregate, and compare performance metrics across airlines and routes.</li>
+          <li>Applied Python with Pandas and NumPy for data cleaning, structuring, and exploratory analysis.</li>
+          <li>Evaluated delay distribution by time windows, routes, and operational segments.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Visualization & Reporting</h2>
+        <ul>
+          <li>Built 3+ dashboard views in Tableau and Power BI.</li>
+          <li>Designed visuals highlighting delay concentration, cancellation trends, and route performance.</li>
+          <li>Framed insights using clear data storytelling and business-focused reporting logic.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Key Insights</h2>
+        <ul>
+          <li>Peak travel periods showed significantly higher delay frequency.</li>
+          <li>Certain routes demonstrated consistently elevated delay behavior.</li>
+          <li>Cancellation patterns suggested scheduling and resource-allocation inefficiencies.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Business Impact & Recommendations</h2>
+        <ul>
+          <li>Supports data-driven scheduling and route optimization decisions.</li>
+          <li>Provides a framework for identifying high-friction operational segments.</li>
+          <li>Recommends deeper investigation of high-delay routes and peak-hour planning strategy.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>What This Demonstrates</h2>
+        <p>
+          This project demonstrates the ability to work with large datasets, structure raw information for analysis,
+          extract insights using SQL and Python, and communicate findings through dashboard-style reporting that aligns
+          with real-world business intelligence workflows.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
