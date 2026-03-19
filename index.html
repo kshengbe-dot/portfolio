@@ -129,8 +129,7 @@
     .project-card,
     .panel,
     .about-card,
-    .contact-card,
-    .case-card{
+    .contact-card{
       background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border:1px solid var(--stroke);
       border-radius:var(--radius);
@@ -624,107 +623,6 @@
       color:var(--muted);
     }
 
-    .case-stack{
-      display:grid;
-      gap:22px;
-      margin-top:16px;
-    }
-
-    .case-card{
-      padding:28px;
-    }
-
-    .case-header{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:14px;
-      flex-wrap:wrap;
-    }
-
-    .case-header h3{
-      margin:0 0 6px;
-      font-size:1.5rem;
-    }
-
-    .case-sub{
-      color:var(--muted);
-      margin:0;
-      max-width:760px;
-    }
-
-    .case-hero-image{
-      width:100%;
-      border-radius:20px;
-      border:1px solid var(--stroke);
-      margin:16px 0 20px;
-      box-shadow:var(--shadow);
-    }
-
-    .case-metrics{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-      margin:8px 0 22px;
-    }
-
-    .case-metric{
-      padding:16px;
-      border-radius:18px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
-    }
-
-    .case-metric strong{
-      display:block;
-      font-size:1.2rem;
-      margin-bottom:4px;
-    }
-
-    .case-metric span{
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    .case-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
-    .case-block{
-      padding:18px;
-      border-radius:18px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.03);
-    }
-
-    .case-block.full{
-      grid-column:1 / -1;
-    }
-
-    .case-block h4{
-      margin:0 0 10px;
-      font-size:1rem;
-      color:#f2f5ff;
-    }
-
-    .case-block p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .case-block ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-    }
-
-    .case-block li{
-      margin:8px 0;
-    }
-
     .contact-card{
       margin:24px 0 70px;
       padding:28px;
@@ -866,13 +764,11 @@
       .hero-grid,
       .projects-grid,
       .two-col,
-      .about-grid,
-      .case-grid{
+      .about-grid{
         grid-template-columns:1fr;
       }
 
       .metrics-strip,
-      .case-metrics,
       .process-grid{
         grid-template-columns:1fr 1fr;
       }
@@ -885,7 +781,7 @@
 
     @media (max-width:640px){
       .hero{padding-top:54px}
-      .hero-card,.side-card,.project-card,.panel,.about-card,.contact-card,.modal-panel,.case-card{
+      .hero-card,.side-card,.project-card,.panel,.about-card,.contact-card,.modal-panel{
         padding:20px;
       }
       .hero-top{
@@ -908,7 +804,6 @@
         align-items:flex-start;
       }
       .metrics-strip,
-      .case-metrics,
       .process-grid{
         grid-template-columns:1fr;
       }
@@ -927,7 +822,6 @@
         <a href="#about">About</a>
         <a href="#process">My Process</a>
         <a href="#featured">Featured Work</a>
-        <a href="#case-studies">Case Studies</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
@@ -953,7 +847,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#case-studies">View Case Studies</a>
+          <a class="btn btn-primary" href="#featured">View Featured Work</a>
           <a class="btn btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
           <a class="btn btn-secondary" href="mailto:kshengbe@gmail.com">Contact Me</a>
         </div>
@@ -1024,7 +918,7 @@
             something usable and decision-oriented.
           </p>
           <p class="mini-note">
-            Start with Featured Work, then scroll into the detailed case studies for full project depth.
+            Start with Featured Work, then open each dedicated case study for the full project depth.
           </p>
         </div>
       </div>
@@ -1150,7 +1044,7 @@
           </div>
 
           <div class="card-actions">
-            <a class="mini-btn primary" href="#flight-case">Read Case Study</a>
+            <a class="mini-btn primary" href="case-flight.html">Read Case Study</a>
             <a class="mini-btn" href="https://github.com/kshengbe-dot/Flight-Data-Analysis-Project" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </article>
@@ -1188,7 +1082,7 @@
           </div>
 
           <div class="card-actions">
-            <a class="mini-btn primary" href="#thisisus-case">Read Case Study</a>
+            <a class="mini-btn primary" href="case-thisisus.html">Read Case Study</a>
             <a class="mini-btn" href="https://github.com/kshengbe-dot/This-Is-Us-Series" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </article>
@@ -1225,376 +1119,8 @@
           </div>
 
           <div class="card-actions">
-            <a class="mini-btn primary" href="#portfolio-case">Read Case Study</a>
+            <a class="mini-btn primary" href="case-portfolio.html">Read Case Study</a>
             <a class="mini-btn" href="https://github.com/kshengbe-dot" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="case-studies" class="reveal">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Detailed Case Studies</h2>
-          <p>
-            These sections go deeper into project context, workflow, tools, analysis, outcomes, and what each build demonstrates.
-          </p>
-        </div>
-      </div>
-
-      <div class="case-stack">
-        <article class="case-card" id="flight-case">
-          <div class="case-header">
-            <div>
-              <div class="eyebrow">Analytics Case Study</div>
-              <h3>Flight Data Analysis & Operational Performance Insights</h3>
-              <p class="case-sub">
-                An end-to-end data project focused on delay behavior, cancellations, route inefficiencies,
-                and translating flight data into operational insight.
-              </p>
-            </div>
-            <div class="badge-row">
-              <span class="badge">Python</span>
-              <span class="badge">SQL</span>
-              <span class="badge">Tableau</span>
-              <span class="badge">Power BI</span>
-            </div>
-          </div>
-
-          <img src="assets/flight-cover.jpg" alt="Flight case study visual" class="case-hero-image" />
-
-          <div class="case-metrics">
-            <div class="case-metric">
-              <strong>50,000+</strong>
-              <span>Flight records analyzed</span>
-            </div>
-            <div class="case-metric">
-              <strong>3+</strong>
-              <span>Dashboard views designed</span>
-            </div>
-            <div class="case-metric">
-              <strong>30–40%</strong>
-              <span>Higher delay frequency in peak periods</span>
-            </div>
-            <div class="case-metric">
-              <strong>End-to-End</strong>
-              <span>Cleaning to reporting workflow</span>
-            </div>
-          </div>
-
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>Overview</h4>
-              <p>
-                This project analyzes airline operational data to uncover patterns in flight delays and cancellations.
-                The goal was to simulate a real-world analytics workflow by transforming raw datasets into structured,
-                decision-ready insights through cleaning, querying, visualization, and reporting.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h4>Business Context</h4>
-              <p>
-                Flight disruptions affect operational cost, scheduling efficiency, customer experience, and performance
-                reliability. Understanding where delays concentrate creates a stronger foundation for route optimization
-                and operational planning.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h4>Objective</h4>
-              <ul>
-                <li>Identify meaningful patterns in delays and cancellations.</li>
-                <li>Analyze operational bottlenecks across routes and time segments.</li>
-                <li>Translate raw airline data into dashboard-ready business insight.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Dataset</h4>
-              <ul>
-                <li>Processed 50,000+ flight records across multiple variables.</li>
-                <li>Worked with fields including airline, departure timing, delay duration, and cancellation status.</li>
-                <li>Used structured and semi-structured data formats including JSON-based records.</li>
-              </ul>
-            </div>
-
-            <div class="case-block full">
-              <h4>Data Pipeline & Workflow</h4>
-              <ul>
-                <li>Imported raw flight data and structured it into analysis-ready tables.</li>
-                <li>Handled missing values, duplicate entries, and inconsistent field formatting.</li>
-                <li>Standardized time formats and built derived fields for delay categories and segmented analysis.</li>
-                <li>Prepared datasets for SQL querying, dashboarding, and comparative performance review.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Analysis & Methodology</h4>
-              <ul>
-                <li>Used SQL to filter, aggregate, and compare performance metrics across airlines and routes.</li>
-                <li>Applied Python with Pandas and NumPy for data cleaning, structuring, and exploratory analysis.</li>
-                <li>Evaluated delay distribution by time windows, routes, and operational segments.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Visualization & Reporting</h4>
-              <ul>
-                <li>Built 3+ dashboard views in Tableau and Power BI.</li>
-                <li>Designed visuals highlighting delay concentration, cancellation trends, and route performance.</li>
-                <li>Framed insights using clear data storytelling and business-focused reporting logic.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Key Insights</h4>
-              <ul>
-                <li>Peak travel periods showed significantly higher delay frequency.</li>
-                <li>Certain routes demonstrated consistently elevated delay behavior.</li>
-                <li>Cancellation patterns suggested scheduling and resource-allocation inefficiencies.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Business Impact & Recommendations</h4>
-              <ul>
-                <li>Supports data-driven scheduling and route optimization decisions.</li>
-                <li>Provides a framework for identifying high-friction operational segments.</li>
-                <li>Recommends deeper investigation of high-delay routes and peak-hour planning strategy.</li>
-              </ul>
-            </div>
-
-            <div class="case-block full">
-              <h4>What This Demonstrates</h4>
-              <p>
-                This project demonstrates the ability to work with large datasets, structure raw information for analysis,
-                extract insights using SQL and Python, and communicate findings through dashboard-style reporting that aligns
-                with real-world business intelligence workflows.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-card" id="thisisus-case">
-          <div class="case-header">
-            <div>
-              <div class="eyebrow">Product & System Case Study</div>
-              <h3>THIS IS US — Interactive Data-Driven Platform</h3>
-              <p class="case-sub">
-                A full interactive platform combining front-end development, Firebase-backed data systems,
-                real-time user interaction, and product-style thinking.
-              </p>
-            </div>
-            <div class="badge-row">
-              <span class="badge">HTML</span>
-              <span class="badge">CSS</span>
-              <span class="badge">JavaScript</span>
-              <span class="badge">Firebase</span>
-            </div>
-          </div>
-
-          <img src="assets/thisisus-cover.jpg" alt="THIS IS US case study visual" class="case-hero-image" />
-
-          <div class="case-metrics">
-            <div class="case-metric">
-              <strong>Multi-Page</strong>
-              <span>Library, reader, community, admin</span>
-            </div>
-            <div class="case-metric">
-              <strong>Real-Time</strong>
-              <span>Firebase-backed interactions</span>
-            </div>
-            <div class="case-metric">
-              <strong>Responsive</strong>
-              <span>Mobile and desktop optimized</span>
-            </div>
-            <div class="case-metric">
-              <strong>Modular</strong>
-              <span>Scalable component structure</span>
-            </div>
-          </div>
-
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>Overview</h4>
-              <p>
-                THIS IS US is an interactive web platform built to simulate a real product environment.
-                It combines user-facing design, dynamic content behavior, and backend data interaction in a way
-                that reflects real-world application thinking rather than a simple static site.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h4>Product Context</h4>
-              <p>
-                Modern digital platforms require smooth interaction between users, content, and data. This project
-                was built to demonstrate how a system can manage content publishing, user interaction, and real-time
-                updates while maintaining usability and visual clarity.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h4>Objective</h4>
-              <ul>
-                <li>Build a scalable interactive reading platform.</li>
-                <li>Implement dynamic data behavior and real-time content interaction.</li>
-                <li>Create a polished user experience across desktop and mobile.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>System Architecture</h4>
-              <ul>
-                <li>Multi-page application structure including library, reading experience, community, and admin dashboard.</li>
-                <li>Firebase Firestore used for real-time data storage and retrieval.</li>
-                <li>Structured collections for users, content, comments, announcements, and engagement behaviors.</li>
-              </ul>
-            </div>
-
-            <div class="case-block full">
-              <h4>Core Features</h4>
-              <ul>
-                <li>User authentication and account-based interaction flow.</li>
-                <li>Dynamic content loading and update behavior.</li>
-                <li>Community features including comments and engagement interactions.</li>
-                <li>Admin-side functionality for moderation, publishing, and content control.</li>
-                <li>Responsive layouts optimized across different screen sizes and reading contexts.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Development Process</h4>
-              <ul>
-                <li>Designed reusable front-end components with HTML, CSS, and JavaScript.</li>
-                <li>Integrated Firebase for data persistence, dynamic content, and system logic.</li>
-                <li>Iteratively refined UI/UX and fixed behavior across mobile and laptop experiences.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Scale & Complexity</h4>
-              <ul>
-                <li>Supports multiple data flows at once, including user state, content structure, and engagement.</li>
-                <li>Designed for maintainability and future feature growth.</li>
-                <li>Demonstrates architecture thinking beyond a one-page portfolio project.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Impact</h4>
-              <ul>
-                <li>Shows the ability to build a complete interactive system, not just an interface.</li>
-                <li>Demonstrates real-time backend integration and structured product thinking.</li>
-                <li>Highlights the ability to combine technical systems with creative user experience.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>What This Demonstrates</h4>
-              <ul>
-                <li>Front-end development and backend integration working together.</li>
-                <li>Real-time data system thinking.</li>
-                <li>Ability to ship a substantial, evolving interactive product.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-card" id="portfolio-case">
-          <div class="case-header">
-            <div>
-              <div class="eyebrow">Brand & Presentation Case Study</div>
-              <h3>Portfolio Website — Technical Showcase Platform</h3>
-              <p class="case-sub">
-                A professional portfolio designed to present projects with greater clarity,
-                stronger visual positioning, and deeper recruiter-facing proof.
-              </p>
-            </div>
-            <div class="badge-row">
-              <span class="badge">HTML</span>
-              <span class="badge">CSS</span>
-              <span class="badge">JavaScript</span>
-              <span class="badge">Responsive Design</span>
-            </div>
-          </div>
-
-          <img src="assets/portfolio-cover.jpg" alt="Portfolio case study visual" class="case-hero-image" />
-
-          <div class="case-metrics">
-            <div class="case-metric">
-              <strong>Central Hub</strong>
-              <span>Projects, skills, proof</span>
-            </div>
-            <div class="case-metric">
-              <strong>Interactive</strong>
-              <span>Project previews and detail modals</span>
-            </div>
-            <div class="case-metric">
-              <strong>Responsive</strong>
-              <span>Optimized across devices</span>
-            </div>
-            <div class="case-metric">
-              <strong>Career-Focused</strong>
-              <span>Built for recruiter review</span>
-            </div>
-          </div>
-
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>Overview</h4>
-              <p>
-                This portfolio serves as the central platform for presenting my technical work, analytics projects,
-                development skills, and applied problem-solving ability. It is built not just to list projects,
-                but to explain them in a way that communicates depth, structure, and credibility.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h4>Objective</h4>
-              <ul>
-                <li>Present projects clearly and professionally.</li>
-                <li>Create a stronger personal brand around analytics and technical work.</li>
-                <li>Provide recruiters with direct access to proof of skill and execution.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Design Strategy</h4>
-              <ul>
-                <li>Used a clean modern visual style with strong hierarchy and readable spacing.</li>
-                <li>Structured the site around summary first, then proof and case-study depth.</li>
-                <li>Added project cards, preview images, badges, and detailed sections for better navigation.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Key Features</h4>
-              <ul>
-                <li>Featured work cards with filters and quick project summaries.</li>
-                <li>Detailed case-study sections for deeper understanding of methods and outcomes.</li>
-                <li>Responsive design for mobile and desktop browsing.</li>
-                <li>Direct access to project repositories and professional materials.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>Impact</h4>
-              <ul>
-                <li>Acts as a centralized proof engine for applications and recruiter review.</li>
-                <li>Strengthens credibility by showing both results and process.</li>
-                <li>Improves how technical work is positioned professionally.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h4>What This Demonstrates</h4>
-              <ul>
-                <li>Ability to present technical work with clarity and structure.</li>
-                <li>Understanding of user experience, branding, and navigation.</li>
-                <li>Strong connection between technical depth and professional storytelling.</li>
-              </ul>
-            </div>
           </div>
         </article>
       </div>
@@ -1696,19 +1222,21 @@
   </div>
 
   <script>
-    // Reveal animation
     const revealItems = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
-          revealObserver.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
     revealItems.forEach(item => revealObserver.observe(item));
 
-    // Filter projects
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -1728,7 +1256,6 @@
       });
     });
 
-    // Project details modal
     const modal = document.getElementById('projectModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalDescription = document.getElementById('modalDescription');
