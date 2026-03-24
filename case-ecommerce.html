@@ -2,45 +2,250 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>E-commerce Sales Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Sales Analysis | Shengbe Koker</title>
+
+  <style>
+    :root{
+      --bg:#08101f;
+      --bg2:#0d1630;
+      --text:#eef2ff;
+      --muted:#a8b4d8;
+      --accent:#7c5cff;
+      --stroke:rgba(255,255,255,.10);
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --shadow-lg:0 28px 90px rgba(0,0,0,.45);
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Inter, system-ui, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(25,211,174,.10), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height:1.7;
+    }
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(16px);
+      background:rgba(7,11,24,.72);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      padding:16px 0;
+    }
+
+    .back-link{
+      padding:10px 16px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+    }
+
+    .hero{
+      padding:56px 0 24px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(124,92,255,.14);
+      color:#ddd3ff;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    h1{
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin:20px 0;
+    }
+
+    .metric{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+    }
+
+    .content{
+      display:grid;
+      gap:18px;
+      padding-bottom:60px;
+    }
+
+    .block{
+      padding:22px;
+      border-radius:22px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      box-shadow:var(--shadow);
+    }
+
+    .block h2{
+      margin-bottom:10px;
+    }
+
+    .block p, .block li{
+      color:var(--muted);
+    }
+
+  </style>
 </head>
-<body style="font-family: Arial; padding: 40px; background:#0d1630; color:white;">
 
-  <h1>E-commerce Sales Analysis</h1>
+<body>
 
-  <p>
-    This project analyzes customer purchasing behavior, product performance,
-    and revenue trends using MySQL and Tableau.
+<nav class="nav">
+  <div class="container nav-inner">
+    <div>Shengbe Koker</div>
+    <a class="back-link" href="index.html">← Back to Portfolio</a>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+  <div class="eyebrow">Analytics Case Study</div>
+  <h1>E-commerce Sales Analysis & Revenue Insights</h1>
+
+  <p class="sub">
+    An end-to-end SQL and Tableau project focused on customer purchasing behavior,
+    revenue distribution, and product performance in an e-commerce environment.
   </p>
 
-  <h2>Tools Used</h2>
-  <ul>
-    <li>MySQL</li>
-    <li>MySQL Workbench</li>
-    <li>Tableau</li>
-    <li>GitHub</li>
-  </ul>
+  <div class="metrics">
+    <div class="metric">
+      <strong>Multi-Table</strong>
+      <span>Relational database design</span>
+    </div>
+    <div class="metric">
+      <strong>SQL</strong>
+      <span>Advanced queries & analysis</span>
+    </div>
+    <div class="metric">
+      <strong>Tableau</strong>
+      <span>Dashboard & storytelling</span>
+    </div>
+    <div class="metric">
+      <strong>Business Focus</strong>
+      <span>Insight-driven decisions</span>
+    </div>
+  </div>
+</section>
 
-  <h2>Key Insights</h2>
-  <ul>
-    <li>High-value products generate the most revenue</li>
-    <li>Top customers drive a large portion of sales</li>
-    <li>Revenue trends highlight business opportunities</li>
-  </ul>
+<section class="content">
 
-  <h2>Links</h2>
-  <p>
-    <a href="https://github.com/kshengbe-dot/sql-analytics-projects/tree/main/project-2-ecommerce-orders-analysis" target="_blank">View GitHub Project</a>
-  </p>
+<div class="block">
+<h2>Overview</h2>
+<p>
+This project analyzes e-commerce order data to uncover patterns in customer behavior,
+product performance, and revenue generation. The goal was to simulate a real-world analytics workflow
+by transforming structured datasets into actionable business insights.
+</p>
+</div>
 
-  <p>
-    <a href="ecommerce_sales_dashboard.pdf" target="_blank">View Dashboard PDF</a>
-  </p>
+<div class="block">
+<h2>Business Context</h2>
+<p>
+E-commerce businesses rely heavily on understanding customer spending patterns and product performance.
+Identifying high-value customers and top-performing products enables better marketing strategies,
+pricing decisions, and inventory management.
+</p>
+</div>
 
-  <p>
-    <a href="index.html">← Back to Portfolio</a>
-  </p>
+<div class="block">
+<h2>Objective</h2>
+<ul>
+<li>Identify top customers by total spending</li>
+<li>Analyze revenue trends over time</li>
+<li>Evaluate product and category performance</li>
+<li>Support data-driven business decisions</li>
+</ul>
+</div>
 
+<div class="block">
+<h2>Database & Structure</h2>
+<ul>
+<li>Designed relational database with customers, products, orders, and order_items</li>
+<li>Established relationships using primary and foreign keys</li>
+<li>Structured data for efficient querying and analysis</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Analysis & Methodology</h2>
+<ul>
+<li>Used SQL joins to combine multiple tables</li>
+<li>Applied aggregation functions (SUM, COUNT, AVG)</li>
+<li>Identified revenue drivers and high-value customers</li>
+<li>Analyzed trends using time-based queries</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Visualization & Reporting</h2>
+<ul>
+<li>Exported SQL results into CSV for Tableau</li>
+<li>Built dashboards showing revenue trends and customer insights</li>
+<li>Used data storytelling to highlight business performance</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Key Insights</h2>
+<ul>
+<li>A small group of customers generated the majority of revenue</li>
+<li>High-value products contributed significantly more than low-cost items</li>
+<li>Revenue trends revealed clear growth opportunities over time</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Business Impact & Recommendations</h2>
+<ul>
+<li>Focus marketing efforts on high-value customers</li>
+<li>Prioritize premium product categories</li>
+<li>Use revenue trends for forecasting and planning</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>Project Links</h2>
+<ul>
+<li><a href="https://github.com/kshengbe-dot/sql-analytics-projects" target="_blank">View GitHub Project</a></li>
+<li><a href="ecommerce_sales_dashboard.pdf" target="_blank">View Tableau Dashboard</a></li>
+</ul>
+</div>
+
+</section>
+
+</main>
 </body>
 </html>
